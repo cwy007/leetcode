@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/multiply-strings/description/
 #
-# Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
+# Given two non-negative integers num1 and num2 represented as strings,
+# return the product of num1 and num2, also represented as a string.
 #
 # Example 1:
 # Input: num1 = "2", num2 = "3"
@@ -14,7 +15,8 @@
 # The length of both num1 and num2 is < 110.
 # Both num1 and num2 contain only digits 0-9.
 # Both num1 and num2 do not contain any leading zero, except the number 0 itself.
-# You must not use any built-in BigInteger library or convert the inputs to integer directly.
+# You must not use any built-in BigInteger library or convert the inputs to
+# integer directly.
 
 # @param {String} num1
 # @param {String} num2
@@ -37,9 +39,15 @@ def multiply(num1, num2)
   result.join('').to_i.to_s         # '0123'.to_i # => 123，去掉 leading zero
 end
 
-p multiply('2', '3') # => '6'
-p multiply('123', '456') # => '56088'
-p multiply('123', '45') # => '5535'
-p multiply('17', '18') # => '306'
-p multiply('25', '26') # => '650'
-p multiply('123', '') # => '0'
+p multiply('2', '3')      # => '6'
+p multiply('123', '456')  # => '56088'
+p multiply('123', '45')   # => '5535'
+p multiply('17', '18')    # => '306'
+p multiply('25', '26')    # => '650'
+p multiply('123', '')     # => '0'
+
+p multiply('2'*112, '3'*112)
+# => "740740740740740740740740740740740740740740740740740740740740740740740740
+#     7407407407407407407407407407407407407405925925925925925925925925925925925
+#     925925925925925925925925925925925925925925925925925925925925925925925925
+#     925926"
