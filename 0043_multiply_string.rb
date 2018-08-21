@@ -24,8 +24,8 @@ def multiply(num1, num2)
   len1 = num1.length
   len2 = num2.length
   result = Array.new(len1+len2, 0)  # [0, 0, .. , 0, 0].length == len1 + len2
-  (0..(len1-1)).to_a.reverse.each do |i|
-    (0..(len2-1)).to_a.reverse.each do |j|
+  (len1-1).downto(0).each do |i|
+    (len2-1).downto(0).each do |j|
       mul = num1[i].to_i * num2[j].to_i
       pos_low = i + j + 1           # 低位
       pos_high = i + j              # 高位
