@@ -25,50 +25,6 @@
 # @param {ListNode} l2
 # @return {ListNode}
 
-
-<<<<<<< Updated upstream
-require 'linked_list'
-
-def add_two_numbers(l1, l2)
-  n1, n2, n3, l3, carry = l1, l2, nil, nil, 0
-
-  while n1 || n2
-    n1 ? (v1 = n1.val; n1 = n1.next) : (v1 = 0)
-    n2 ? (v2 = n2.val; n2 = n2.next) : (v2 = 0)
-
-    sum = v1 + v2 + carry
-    carry, digit = sum.divmod(10)
-
-    n = ListNode.new(digit)
-    n3 ? (n3.next = n; n3 = n) : (n3 = n; l3 = n3)
-  end
-  n3.next = ListNode.new(carry) if carry.nonzero?
-
-  l3
-end
-
-# 243
-# 564
-
-#
-# def add_two_numbers(l1, l2)
-#   n1, n2, n3, l3, carry = l1, l2, nil, nil, 0
-#
-#   while n1 || n2
-#     n1 ? (v1 = n1.val; n1 = n1.next) : (v1 = 0)
-#     n2 ? (v2 = n2.val; n2 = n2.next) : (v2 = 0)
-#
-#     sum = v1 + v2 + carry
-#     carry, digit = sum.divmod(10)
-#
-#     n = ListNode.new(digit)
-#     n3 ? (n3.next = n; n3 = n) : (n3 = n; l3 = n3)
-#   end
-#   n3.next = ListNode.new(carry) if carry.nonzero?
-#
-#   l3
-# end
-=======
 require_relative 'linked_list'
 
 def add_two_numbers(l1, l2)                          # l1, l2 为两个链表
@@ -116,4 +72,3 @@ p list3.to_array                    # => [7, 0, 8]
 p list3.iterate                     # => [7, 0, 8]
 p list3.iterate { |val| val * 2 }   # => [14, 0, 16]
 p list3.iterate { |val| val ** 2 }  # => [49, 0, 64]
->>>>>>> Stashed changes

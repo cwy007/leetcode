@@ -33,79 +33,22 @@ class LinkedList
     @tail      = @tail.next
   end
 
-<<<<<<< Updated upstream
-  # Print out all the values of the LinkedList in order.
-  def print
-=======
   # Put all the values of the LinkedList in an array.
   def to_array
->>>>>>> Stashed changes
     current_node = @head
 
     arr = []
     while current_node != nil
       arr << current_node.val
-<<<<<<< Updated upstream
-      # puts "\tLL Node Value = #{current_node.val}"
-      current_node = current_node.next
-    end
-    p arr
-=======
       current_node = current_node.next
     end
     arr
->>>>>>> Stashed changes
   end
 
   # Iterate through LinkedList and perform block actions.
   def iterate
     if block_given?
       current_node = @head
-<<<<<<< Updated upstream
-
-      while current_node != nil
-        yield current_node.val
-        current_node = current_node.next
-      end
-    else
-      print
-    end
-  end
-end
-
-#############
-# TESTBENCH #
-#############
-
-puts "\nCreating LinkedList of 5 Node elements with values 1-5.\n"
-
-h    = ListNode.new(1)
-list = LinkedList.new(h)
-
-(2..5).each {|n| list.insert(ListNode.new(n)) }
-
-puts "\nCurrent values contained in LinkedList:\n"
-
-list.print
-
-puts "\n"
-puts "Values of head and tail of LinkedList:\n"
-
-puts "\tValue of LL Head = #{list.head.val}"
-puts "\tValue of LL Tail = #{list.tail.val}"
-
-puts "\n"
-puts "Iterating through LinkedList without a block prints the list.\n"
-
-list.iterate
-
-puts "\n"
-puts "Iterating through the LinkedList with a block runs the block on each element.\n"
-
-list.iterate {|n| puts "\tLL Node Value squared = #{n ** 2}"}
-
-puts "\n"
-=======
       arr = []
       while current_node != nil
         arr << yield(current_node.val)
@@ -117,4 +60,3 @@ puts "\n"
     end
   end
 end
->>>>>>> Stashed changes
