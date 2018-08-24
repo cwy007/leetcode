@@ -26,6 +26,7 @@
 # @return {ListNode}
 
 
+<<<<<<< Updated upstream
 require 'linked_list'
 
 def add_two_numbers(l1, l2)
@@ -67,3 +68,52 @@ end
 #
 #   l3
 # end
+=======
+require_relative 'linked_list'
+
+def add_two_numbers(l1, l2)                          # l1, l2 为两个链表
+  dummy_head = ListNode.new(0)                       # 链表的假的头部节点
+  n1, n2, curr, carry = l1&.head, l2.head, dummy_head, 0
+
+  while n1 || n2
+    x = n1 ? n1.val : 0
+    y = n2 ? n2.val : 0
+    sum = carry + x + y
+    carry = sum / 10
+    curr.next = ListNode.new(sum % 10)
+    curr = curr.next
+    n1 = n1&.next
+    n2 = n2&.next
+  end
+  curr.next = ListNode.new(carry) if carry > 0
+  LinkedList.new(dummy_head.next)
+end
+
+# 新建两个链表 list1, list2
+node1 = ListNode.new(2)
+list1 = LinkedList.new(node1)
+[4, 3].each { |n| list1.insert(ListNode.new(n)) }
+
+node2 = ListNode.new(5)
+list2 = LinkedList.new(node2)
+[6,4].each { |n| list2.insert(ListNode.new(n)) }
+
+p list3 = add_two_numbers(list1, list2)
+# <LinkedList:0x00007fb14d886750
+#   @head=#<ListNode:0x00007fb14d8867f0 @val=7,
+#     @next=#<ListNode:0x00007fb14d8867a0 @val=0,
+#       @next=#<ListNode:0x00007fb14d886778 @val=8,
+#         @next=nil>>>,
+#   @tail=#<ListNode:0x00007fb14d8867f0 @val=7,
+#     @next=#<ListNode:0x00007fb14d8867a0 @val=0,
+#       @next=#<ListNode:0x00007fb14d886778 @val=8,
+#         @next=nil>>>
+# >
+
+p list1.to_array                    # => [2, 4, 3]
+p list2.to_array                    # => [2, 4, 3]
+p list3.to_array                    # => [7, 0, 8]
+p list3.iterate                     # => [7, 0, 8]
+p list3.iterate { |val| val * 2 }   # => [14, 0, 16]
+p list3.iterate { |val| val ** 2 }  # => [49, 0, 64]
+>>>>>>> Stashed changes

@@ -33,23 +33,35 @@ class LinkedList
     @tail      = @tail.next
   end
 
+<<<<<<< Updated upstream
   # Print out all the values of the LinkedList in order.
   def print
+=======
+  # Put all the values of the LinkedList in an array.
+  def to_array
+>>>>>>> Stashed changes
     current_node = @head
 
     arr = []
     while current_node != nil
       arr << current_node.val
+<<<<<<< Updated upstream
       # puts "\tLL Node Value = #{current_node.val}"
       current_node = current_node.next
     end
     p arr
+=======
+      current_node = current_node.next
+    end
+    arr
+>>>>>>> Stashed changes
   end
 
   # Iterate through LinkedList and perform block actions.
   def iterate
     if block_given?
       current_node = @head
+<<<<<<< Updated upstream
 
       while current_node != nil
         yield current_node.val
@@ -93,3 +105,16 @@ puts "Iterating through the LinkedList with a block runs the block on each eleme
 list.iterate {|n| puts "\tLL Node Value squared = #{n ** 2}"}
 
 puts "\n"
+=======
+      arr = []
+      while current_node != nil
+        arr << yield(current_node.val)
+        current_node = current_node.next
+      end
+      arr
+    else
+      to_array
+    end
+  end
+end
+>>>>>>> Stashed changes
