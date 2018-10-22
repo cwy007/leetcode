@@ -37,6 +37,6 @@ def length_of_longest_substring(s)
   maxlen
 end
 
-p length_of_longest_substring("abcabcbb") # => 3
-p length_of_longest_substring("bbbbb") # => 1
-p length_of_longest_substring("pwwkew") # => 3
+p length_of_longest_substring("abcabcbb")   # => 3
+p length_of_longest_substring("bbbbb")      # => 1
+p length_of_longest_substring("pwwkew")     # => 3
